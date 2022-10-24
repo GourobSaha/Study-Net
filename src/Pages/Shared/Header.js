@@ -5,12 +5,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import logoIcon from "../../Images/laptop_computer_books_study_pc_icon_209270.png"
 
 const Header = () => {
     return (
-        <Navbar bg="warning" expand="lg">
+        <Navbar bg="warning" expand="lg" className='mb-4'>
             <Container className='my-2'>
-                <Link to='/' className='text-decoration-none fw-bold text-dark fs-5'>STUDY NET</Link>
+                <Link to='/' className='d-flex align-items-center text-decoration-none fw-bold text-dark fs-5'><img src={logoIcon} alt="logo" /> STUDY NET</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
