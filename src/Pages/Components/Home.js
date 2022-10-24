@@ -53,7 +53,38 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-
+            <div>
+                <h2 className='my-4'>Features of Study Net</h2>
+                <CardGroup>
+                    <Card>
+                        <Card.Img variant="top p-3" src={image4} />
+                        <Card.Body>
+                            <Card.Title>Organized Study Materials</Card.Title>
+                            <Card.Text>
+                                Organizes study materials will help the students easily navigate through out our courses.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                    <Card>
+                        <Card.Img variant="top p-3" src={image5} />
+                        <Card.Body>
+                            <Card.Title>Regular Assessments</Card.Title>
+                            <Card.Text>
+                                Multiple assignments are created to check the learning progress of a student.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                    <Card>
+                        <Card.Img variant="top p-3" src={image6} />
+                        <Card.Body>
+                            <Card.Title>Best Teachers</Card.Title>
+                            <Card.Text>
+                                Each courses are taught by best teachers from the different part of the world.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </CardGroup>
+            </div>
         </Container>
     );
 };
