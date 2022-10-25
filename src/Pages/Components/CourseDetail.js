@@ -1,12 +1,12 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { HiUsers, HiStar, HiDownload } from "react-icons/hi";
 
 const CourseDetail = () => {
     const courseDetail = useLoaderData();
-    const { course_name, description, img, price, enrolled, rating } = courseDetail;
+    const { course_name, description, img, price, enrolled, rating, id } = courseDetail;
     return (
         <div>
             <Card className="text-center">
@@ -21,7 +21,7 @@ const CourseDetail = () => {
                         {description}
                     </Card.Text>
                     <h5>${price}</h5>
-                    <Button variant="warning">Get Premium Access</Button>
+                    <Link to={`/checkout/${id}`}><Button variant="warning">Get Premium Access</Button></Link>
                 </Card.Body>
                 <Card.Footer className='d-flex justify-content-evenly'>
                     <p><HiUsers className='text-primary' /> Students: {enrolled}</p>

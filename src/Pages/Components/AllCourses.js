@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 const AllCourses = ({ course }) => {
-
-    console.log(course)
     const { course_name, img, description, price, id } = course;
 
     return (
