@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const AllCourses = ({ course }) => {
 
     console.log(course)
-    const { course_name, img, description, price } = course;
+    const { course_name, img, description, price, id } = course;
 
     return (
         <div className='d-flex justify-content-center'>
@@ -19,7 +19,7 @@ const AllCourses = ({ course }) => {
                         {description.slice(0, 80)}...
                     </Card.Text>
                     <h5>${price}</h5>
-                    <Link><Button variant="warning">View Details</Button></Link>
+                    <Link to={`/courses/${id}`}><Button variant="warning">View Details</Button></Link>
                 </Card.Body>
             </Card>
         </div>
