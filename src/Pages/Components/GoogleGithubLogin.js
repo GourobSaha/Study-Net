@@ -3,10 +3,14 @@ import React from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const GoogleGithubLogin = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    const from = location.state?.from?.pathname || '/';
     const { providerLogin } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
@@ -17,6 +21,7 @@ const GoogleGithubLogin = () => {
             .then(res => {
                 const user = res.user;
                 // console.log(user);
+                navigate(from, { replace: true });
             })
             .catch(error => console.error(error))
     }
@@ -26,6 +31,7 @@ const GoogleGithubLogin = () => {
             .then(res => {
                 const user = res.user;
                 // console.log(user);
+                navigate(from, { replace: true });
             })
             .catch(error => console.error(error))
     }

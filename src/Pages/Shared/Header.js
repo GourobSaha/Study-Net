@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -12,16 +12,26 @@ import { Image } from 'react-bootstrap';
 import { FaUserGraduate } from "react-icons/fa";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [radioValue, setRadioValue] = useState('1');
+    const radios = [
+        { name: 'Light', value: '1' },
+        { name: 'Dark', value: '2' }
+    ];
+
+
+    //Handle Logout Button
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.error(error))
     }
 
+    //Tooltip rendering
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
             {user?.displayName}
@@ -61,7 +71,7 @@ const Header = () => {
                                             </OverlayTrigger>
                                         }
                                     </div>
-                                    <Button onClick={handleLogOut} variant="outline-danger my-1">Logout</Button>
+                                    <Link onClick={handleLogOut} ><Button variant="outline-danger my-1 me-2">Logout</Button></Link>
                                 </>
                                 :
                                 <>
@@ -70,11 +80,24 @@ const Header = () => {
                                 </>
                         }
 
+                        <ButtonGroup className='my-1'>
+                            {radios.map((radio, idx) => (
+                                <ToggleButton
+                                    key={idx}
+                                    id={`radio-${idx}`}
+                                    type="radio"
+                                    variant={idx % 2 ? 'outline-secondary' : 'outline-light'}
+                                    name="radio"
+                                    value={radio.value}
+                                    checked={radioValue === radio.value}
+                                    onChange={(e) => setRadioValue(e.currentTarget.value)}
+                                >
+                                    {radio.name}
+                                </ToggleButton>
+                            ))}
+                        </ButtonGroup>
+
                     </Nav>
-                    <ButtonGroup aria-label="Basic example" className='mx-2'>
-                        <Button variant="light my-1">Light</Button>
-                        <Button variant="secondary my-1">Dark</Button>
-                    </ButtonGroup>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

@@ -9,12 +9,13 @@ import GoogleGithubLogin from './GoogleGithubLogin';
 
 const Register = () => {
     const [error, setError] = useState('');
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
 
+    //Handle Submit
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -24,7 +25,7 @@ const Register = () => {
         const password = form.password.value;
 
         // console.log(name, email, photoURL, password);
-
+        //Creating User
         createUser(email, password)
             .then(res => {
                 const user = res.user;
@@ -32,11 +33,22 @@ const Register = () => {
                 form.reset();
                 setError('');
                 navigate(from, { replace: true });
+                handleUpdateProfile(name, photoURL);
             })
             .catch(error => {
                 console.error(error);
                 setError(error.message);
             })
+    }
+    //Profile Update
+    const handleUpdateProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
     return (

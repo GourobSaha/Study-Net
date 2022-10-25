@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Container, Spinner } from 'react-bootstrap';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
-
+//Protected Route For Authenticated Users
 const PrivateRoute = ({ children }) => {
 
     const { user, loading } = useContext(AuthContext);

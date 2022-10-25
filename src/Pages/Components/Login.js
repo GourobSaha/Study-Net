@@ -16,6 +16,7 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
 
+    //Handle Submit
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -23,7 +24,7 @@ const Login = () => {
         const password = form.password.value;
 
         // console.log(name, email, photoURL, password);
-
+        //User Sign in
         signIn(email, password)
             .then(res => {
                 const user = res.user;
