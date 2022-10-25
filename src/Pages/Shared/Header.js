@@ -23,7 +23,7 @@ const Header = () => {
                         <Link to='/faq' className='text-decoration-none fw-semibold me-2'><Button variant="outline-secondary my-1">FAQ</Button></Link>
                         <Link to='/blogs' className='text-decoration-none fw-semibold me-2'><Button variant="outline-secondary my-1">Blogs</Button></Link>
                         <Link to='/login' className='text-decoration-none fw-semibold me-2'><Button variant="outline-secondary my-1">Login</Button></Link>
-                        <Link className='text-decoration-none fw-semibold me-2'><Button variant="outline-secondary my-1">Register</Button></Link>
+                        <Link to='/register' className='text-decoration-none fw-semibold me-2'><Button variant="outline-secondary my-1">Register</Button></Link>
                         <p className='my-auto'>{user?.displayName}</p>
                     </Nav>
                     <ButtonGroup aria-label="Basic example" className='mx-2'>

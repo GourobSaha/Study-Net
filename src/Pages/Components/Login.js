@@ -24,7 +24,7 @@ const Login = () => {
                         Login
                     </Button>
                 </Form>
-                <p className='text-muted mt-2 text-center'>Don't Have an Account? <Link to='/register'>Register</Link></p>
+                <p className='text-muted mt-2 text-center'>Don't have an account? <Link to='/register'>Please Register</Link></p>
                 <div className='mt-3'>
                     <GoogleGithubLogin></GoogleGithubLogin>
                 </div>
