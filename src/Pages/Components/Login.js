@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import GoogleGithubLogin from './GoogleGithubLogin';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -32,16 +33,19 @@ const Login = () => {
                 form.reset();
                 setError('');
                 navigate(from, { replace: true });
+                toast.success('Successfully Logged In');
             })
             .catch(error => {
                 console.error(error);
                 setError(error.message);
+                toast.error(error.message);
             })
     }
     return (
         <Container style={{ height: "500px" }}
             className="d-flex justify-content-center align-items-center w-100">
             <div className='p-3 shadow rounded-4 border border-warning'>
+                <h2 className='text-center'>Login</h2>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>

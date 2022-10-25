@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import GoogleGithubLogin from './GoogleGithubLogin';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const [error, setError] = useState('');
@@ -34,10 +35,12 @@ const Register = () => {
                 setError('');
                 navigate(from, { replace: true });
                 handleUpdateProfile(name, photoURL);
+                toast.success('Successfully Signed Up');
             })
             .catch(error => {
                 console.error(error);
                 setError(error.message);
+                toast.error(error.message);
             })
     }
     //Profile Update
@@ -56,6 +59,7 @@ const Register = () => {
             <Container style={{ height: "700px" }}
                 className="d-flex justify-content-center align-items-center w-100">
                 <div className='p-3 shadow rounded-4 border border-warning'>
+                    <h2 className='text-center'>Registration</h2>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Name</Form.Label>

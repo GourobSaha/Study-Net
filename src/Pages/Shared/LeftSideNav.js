@@ -16,9 +16,9 @@ const LeftSideNav = () => {
     return (
         <Container>
             <div className='text-start'>
-                <h2>Featured Courses</h2>
+                <h2 className='mb-4'>Featured Courses</h2>
                 <Link to={'/courses'}>All Courses</Link >
-                <div className='mt-2'>
+                <div className='mt-3'>
                     {
                         courseNames.map(courseName => <p key={courseName.id}>
                             <Link to={`/courses/${courseName.id}`}>{courseName.course_name}</Link>

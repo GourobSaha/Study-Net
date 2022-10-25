@@ -5,8 +5,8 @@ import AllCourses from './AllCourses';
 const Courses = () => {
     const courses = useLoaderData();
     return (
-        <div className='text-center'>
-            <h2>Courses</h2>
+        <div className='text-center mb-5'>
+            <h2>Our Courses</h2>
             <div className='row row-cols-md-2 g-4 mt-2'>
                 {
                     courses.map(course => <AllCourses

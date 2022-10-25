@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const GoogleGithubLogin = () => {
     const navigate = useNavigate();
@@ -22,8 +23,12 @@ const GoogleGithubLogin = () => {
                 const user = res.user;
                 // console.log(user);
                 navigate(from, { replace: true });
+                toast.success('Successfully Logged In')
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error);
+                toast.error(error.message);
+            })
     }
 
     const handleGitHubSignIn = () => {
@@ -32,8 +37,12 @@ const GoogleGithubLogin = () => {
                 const user = res.user;
                 // console.log(user);
                 navigate(from, { replace: true });
+                toast.success('Successfully Logged In');
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error);
+                toast.error(error.message);
+            })
     }
 
     return (

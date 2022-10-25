@@ -13,6 +13,7 @@ import { FaUserGraduate } from "react-icons/fa";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import toast from 'react-hot-toast';
 
 
 const Header = () => {
@@ -27,7 +28,9 @@ const Header = () => {
     //Handle Logout Button
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                toast.success('Logged Out')
+            })
             .catch(error => console.error(error))
     }
 
@@ -62,13 +65,7 @@ const Header = () => {
                                                 <Image style={{ height: '40px' }} roundedCircle src={user?.photoURL}></Image>
                                             </OverlayTrigger>
                                             :
-                                            <OverlayTrigger
-                                                placement="bottom"
-                                                delay={{ show: 250, hide: 400 }}
-                                                overlay={renderTooltip}
-                                            >
-                                                <FaUserGraduate></FaUserGraduate>
-                                            </OverlayTrigger>
+                                            <FaUserGraduate></FaUserGraduate>
                                         }
                                     </div>
                                     <Link onClick={handleLogOut} ><Button variant="outline-danger my-1 me-2">Logout</Button></Link>

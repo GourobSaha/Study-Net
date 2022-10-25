@@ -22,7 +22,7 @@ const Home = () => {
                         src={image1}
                         alt="First slide"
                     />
-                    <Carousel.Caption className='text-dark mb-1'>
+                    <Carousel.Caption className='text-dark'>
                         <h3>Learn With Fun</h3>
                         <p>Our program is created to make learning more enjoyable</p>
                         <Link to='/courses'><Button variant="warning">Get Started</Button></Link>
@@ -34,7 +34,7 @@ const Home = () => {
                         src={image2}
                         alt="First slide"
                     />
-                    <Carousel.Caption className='text-dark mb-1'>
+                    <Carousel.Caption className='text-dark'>
                         <h3>Be More Creative</h3>
                         <p>Our program is created to make learning more creative</p>
                         <Link to='/courses'><Button variant="warning">Get Started</Button></Link>
@@ -46,14 +46,14 @@ const Home = () => {
                         src={image3}
                         alt="First slide"
                     />
-                    <Carousel.Caption className='text-dark mb-1'>
+                    <Carousel.Caption className='text-dark'>
                         <h3>Confidence Will Pursue</h3>
                         <p>Our program is created to make you more confident</p>
                         <Link to='/courses'><Button variant="warning">Get Started</Button></Link>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-            <div className='text-center'>
+            <div className='text-center mb-5'>
                 <h2 className='my-4'>Features of Study Net</h2>
                 <CardGroup>
                     <Card>
