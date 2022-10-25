@@ -53,7 +53,7 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-            <div>
+            <div className='text-center'>
                 <h2 className='my-4'>Features of Study Net</h2>
                 <CardGroup>
                     <Card>

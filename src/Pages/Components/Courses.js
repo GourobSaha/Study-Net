@@ -5,7 +5,7 @@ import AllCourses from './AllCourses';
 const Courses = () => {
     const courses = useLoaderData();
     return (
-        <div>
+        <div className='text-center'>
             <h2>Courses</h2>
             <div className='row row-cols-md-2 g-4 mt-2'>
                 {

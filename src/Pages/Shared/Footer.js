@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className="w-100 bg-dark text-white py-4 mt-5">
+        <div className="w-100 bg-dark text-white py-4 mt-5 text-center">
             <h4><img src={logoIcon} alt="logo" />STUDY NET</h4>
             <p>©Copyright 2023, All Rights Reserved to Study Net.</p>
             <div className="mx-1 fs-5">
