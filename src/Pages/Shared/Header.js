@@ -10,6 +10,9 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
 import { FaUserGraduate } from "react-icons/fa";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -18,6 +21,12 @@ const Header = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            {user?.displayName}
+        </Tooltip>
+    );
     return (
         <Navbar bg="warning" expand="lg" className='mb-4'>
             <Container className='my-2'>
@@ -33,11 +42,23 @@ const Header = () => {
                             user?.uid ?
 
                                 <>
-                                    <p className='my-auto mx-1'>{user?.displayName}</p>
                                     <div className='my-auto mx-1'>
                                         {user?.photoURL ?
-                                            <Image style={{ height: '40px' }} roundedCircle src={user?.photoURL}></Image>
-                                            : <FaUserGraduate />
+                                            <OverlayTrigger
+                                                placement="bottom"
+                                                delay={{ show: 250, hide: 400 }}
+                                                overlay={renderTooltip}
+                                            >
+                                                <Image style={{ height: '40px' }} roundedCircle src={user?.photoURL}></Image>
+                                            </OverlayTrigger>
+                                            :
+                                            <OverlayTrigger
+                                                placement="bottom"
+                                                delay={{ show: 250, hide: 400 }}
+                                                overlay={renderTooltip}
+                                            >
+                                                <FaUserGraduate></FaUserGraduate>
+                                            </OverlayTrigger>
                                         }
                                     </div>
                                     <Button onClick={handleLogOut} variant="outline-danger my-1">Logout</Button>
