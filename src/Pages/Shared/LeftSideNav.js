@@ -16,7 +16,7 @@ const LeftSideNav = () => {
     return (
         <Container>
             <div className='text-start'>
-                <h3>Featured Courses</h3>
+                <h2>Featured Courses</h2>
                 <Link to={'/courses'}>All Courses</Link >
                 <div className='mt-2'>
                     {
