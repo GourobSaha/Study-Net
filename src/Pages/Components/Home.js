@@ -6,9 +6,9 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import image1 from '../../Images/business-women-signature-document.jpg'
 import image2 from '../../Images/coding-man.jpg'
 import image3 from '../../Images/pleasant-looking-afro-american-woman-holds-notepads-papers-studies-college-glad-finish-studying.jpg'
-import image4 from '../../Images/workspace_table_study_work_furniture_icon_209731.png'
-import image5 from '../../Images/exam_sheet_test_school_study_icon_209259.png'
-import image6 from '../../Images/teacher_education_school_lecture_student_icon_141984.png'
+import image4 from '../../Images/delivery_logistic_warehouse_storage_deliver_icon_192880 .png'
+import image5 from '../../Images/web_development_coding_programming_binary_icon_192844.png'
+import image6 from '../../Images/business_marketing_strategy_plan_project_icon_192849.png'
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 

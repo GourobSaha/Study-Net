@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { HiOutlineEmojiSad } from "react-icons/hi";
 
 const NotFound = () => {
+    //Error page for unknown routes
     return (
         <div
             style={{ height: "500px" }}

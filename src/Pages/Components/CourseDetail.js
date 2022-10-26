@@ -26,10 +26,11 @@ const CourseDetail = () => {
         pdf.save('print.pdf');
     };
 
+    //Details of a particular course
     const { course_name, description, img, price, enrolled, rating, id } = courseDetail;
     return (
         <div>
-            <Card className="text-center">
+            <Card className="text-center mb-5">
                 <Card.Header className='d-flex flex-column flex-lg-row justify-content-between align-items-center'>
                     <h4>{course_name}</h4>
                     <h5>Download PDF <Button onClick={handleDownloadPdf} variant="warning"><HiDownload className='fs-4' /></Button></h5>

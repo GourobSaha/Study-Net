@@ -17,11 +17,12 @@ const GoogleGithubLogin = () => {
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
 
+    //Handling Google Login
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
             .then(res => {
                 const user = res.user;
-                // console.log(user);
+                console.log(user);
                 navigate(from, { replace: true });
                 toast.success('Successfully Logged In')
             })
@@ -31,11 +32,12 @@ const GoogleGithubLogin = () => {
             })
     }
 
+    //Handling GitHub Login
     const handleGitHubSignIn = () => {
         providerLogin(gitHubProvider)
             .then(res => {
                 const user = res.user;
-                // console.log(user);
+                console.log(user);
                 navigate(from, { replace: true });
                 toast.success('Successfully Logged In');
             })

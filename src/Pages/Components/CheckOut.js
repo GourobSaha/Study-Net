@@ -4,11 +4,12 @@ import { useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { HiUsers, HiStar, HiOutlineShoppingCart } from "react-icons/hi";
 import Button from 'react-bootstrap/Button';
-import image7 from '../../Images/confirm_order_purchase_buy_shipping_icon_187253.png'
+import image7 from '../../Images/delivery_express_vespa_scooter_deliver_icon_192827.png'
 import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
 
 const CheckOut = () => {
+    //Private Route Only Authenticated users can access this route.
     const checkOutDetails = useLoaderData();
     const { course_name, img, description, price, enrolled, rating } = checkOutDetails;
 
@@ -18,7 +19,7 @@ const CheckOut = () => {
     }
 
     return (
-        <Container>
+        <Container className='mb-5'>
             <Row className='g-4'>
                 <Col lg='6' md='12'>
                     <Card className="text-center">

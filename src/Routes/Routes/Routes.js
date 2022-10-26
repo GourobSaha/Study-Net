@@ -5,6 +5,7 @@ import Blog from "../../Pages/Components/Blog";
 import CheckOut from "../../Pages/Components/CheckOut";
 import CourseDetail from "../../Pages/Components/CourseDetail";
 import Courses from "../../Pages/Components/Courses";
+import FAQ from "../../Pages/Components/FAQ";
 import Home from "../../Pages/Components/Home";
 import Login from "../../Pages/Components/Login";
 import NotFound from "../../Pages/Components/NotFound";
@@ -23,6 +24,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/faq',
+                element: <FAQ></FAQ>
             },
             {
                 path: '/login',

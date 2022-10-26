@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 const AllCourses = ({ course }) => {
     const { course_name, img, description, price, id } = course;
-
+    //Showing All the Courses
     return (
         <div className='d-flex justify-content-center'>
-            <Card style={{ width: '18rem' }}>
+            <Card className='border-0 shadow'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{course_name}</Card.Title>
